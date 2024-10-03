@@ -1,12 +1,17 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react";
+
 
 const EnrolmentPopUp = ({ showModal, setShowModal }) => {
+  const [isChecked, setIsChecked] = useState(false);
   if (!showModal) return null;
 
-  return (
-    <div className="modal-overlay">
+  return (<>
+    
+    <div className="modal-content-popup">
       <div
-        className="bg-FFFFFF relative border-radius-20 "
+        className=" bg-FFFFFF relative border-radius-20 "
         style={{ width: "658px" }}
       >
         <span
@@ -23,7 +28,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
         </span>
         <div className="modal-padding">
           <div className="text-center mb-40">
-            <p className="text-24 text-3980F3">Enrolment</p>
+            <p className="text-24 text-3980F3 mb-0">Enrolment</p>
             <span className="text-14">Enter details to get enrolled</span>
           </div>
 
@@ -32,7 +37,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
               <input
                 required
                 type="text"
-                placeholder="Full Name"
+                placeholder="Full Name*"
                 className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
               />
             </div>
@@ -40,7 +45,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
               <input
                 required
                 type="text"
-                placeholder="City"
+                placeholder="City*"
                 className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
               />
             </div>
@@ -48,7 +53,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
               <input
                 required
                 type="text"
-                placeholder="Phone"
+                placeholder="Phone number*"
                 className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
               />
             </div>
@@ -65,7 +70,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                 required
               >
                 <option value="" disabled selected className="">
-                  University
+                  University*
                 </option>
                 <option value="university1">University 1</option>
                 <option value="university2">University 2</option>
@@ -86,7 +91,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                 required
               >
                 <option value="" disabled selected className="">
-                  Test
+                  Test*
                 </option>
                 <option value="university1">Test 1</option>
                 <option value="university2">Test 2</option>
@@ -105,7 +110,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
           <div>
             <div className="mt-20">
               <label className="custom-checkbox text-14 font-400">
-                <input type="checkbox" className="mr-8" />I agree to the &nbsp;{" "}
+                <input type="checkbox" className="mr-8" onClick={(e)=> setIsChecked(e.target.checked)} />I agree to the &nbsp;{" "}
                 <span className="text-0378A6"> Terms of Services &nbsp;</span>{" "}
                 and &nbsp;<span className="text-0378A6"> Privacy Policy</span>.
               </label>
@@ -113,13 +118,16 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
           </div>
 
           <div className="mt-28">
-            <button className="bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8">
-              Submit
+            <button className="bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8" submit disabled ={!isChecked}>
+              Done
             </button>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+
+      <div className="modal-overlay " onClick={() => setShowModal(!showModal)} > </div>
+      </>
   );
 };
 

@@ -32,7 +32,7 @@ function HeroSection() {
             Evaluate Your Professors and Enhance the Academic Experience
           </p>
 
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center pointer">
             <div className="pxy-18-57 border-none border-radius-10 bg-000000 text-FFFFFF relative btn-hover" onClick={()=>setShowModal(!showModal)} >
               <Image
                 src="/BtnLeftImage.svg"
