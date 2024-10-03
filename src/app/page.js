@@ -57,7 +57,7 @@ export default function Home() {
               style={{ top: "-65px", right: "-60px" }}
             />
             <div className="about-image-width border-radius-10 opacity-75 ">
-              <video className="full-width"  autoPlay muted playsInline>
+              <video className="full-width"  autoPlay muted playsInline loop>
                 <source src="/DemoVideo.mp4" type="video/mp4" />
               </video>
             </div>
