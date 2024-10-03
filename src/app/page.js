@@ -17,7 +17,7 @@ export default function Home() {
       {/* About Access Ed */}
       <div className="py-100">
         <div className="d-flex flex-column align-items-center">
-          <div className="d-flex align-items-center pxy-10-6 mb-30 border-radius-20 box-shadow-accessEd bg-FFFFFF ">
+          <div className="d-flex align-items-center pxy-12-6 mb-30 border-radius-20 box-shadow-accessEd bg-FFFFFF ">
             <Image
               src="/stars.svg"
               width={20}
