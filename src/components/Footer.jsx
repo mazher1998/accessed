@@ -115,7 +115,7 @@ function Footer() {
         </div>
         <div className="px-100 py-20">
           <div className="separator d-none d-sm-block"></div>
-          <div className="d-flex justify-content-between py-20">
+          <div className="d-flex justify-content-between ">
             <div>
               <span className="text-18 text-weight-400 text-394560">
               Copyright © {currentyear} INOVAQO

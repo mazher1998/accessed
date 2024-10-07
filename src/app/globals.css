@@ -14,6 +14,10 @@
   padding-right: 100px;
 }
 
+.px-300{
+  padding-left: 300px;
+  padding-right: 300px;
+}
 
 /* Padding Y-axis */
 
@@ -28,6 +32,11 @@
 .py-12{
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.py-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
@@ -117,6 +126,10 @@
 
 .pb-100{
   padding-bottom: 100px;
+}
+
+.pb-24{
+  padding-bottom: 24px;
 }
 
 /* Padding right */
@@ -347,7 +360,9 @@
 .display-block{
   display: block;
 }
-
+.display-flex{
+  display: flex;
+}
 /* Width */
 
 .full-width{
@@ -397,10 +412,10 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
   margin-bottom: 40px;
 }
 
-.custom-email-input::placeholder, .grey-placeholder::placeholder {
+.custom-email-input::placeholder {
   color: #999999;
+  
 }
-
 
 .required::placeholder::after {
   content: '*';
@@ -420,8 +435,6 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
   padding-left: 45px;
 }
 
-
-
 .btn-hover:hover{
   background: linear-gradient(180deg, #4AA0F3 0%, #377CF3 100%);
 }
@@ -430,67 +443,10 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
 
 /* Pop Up modal */
 
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
 
-.modal-content-popup{
-  position: fixed;
-  top: 25%;
-  left: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 11;
+@media (max-width: 1600px) {
+  .px-300{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
-
-/* Custom checkbox */
-.custom-checkbox{
-  display: flex;
-  align-items: center;
-}
-
-.custom-checkbox input[type="checkbox"] {
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #D9D9D9;
-  border-radius: 4px;
-  cursor: pointer;
-
-}
-.custom-checkbox input[type="checkbox"]:checked {
-  background-color: #0378A6; /* Background color when checked */
-  border-color: #0378A6;     /* Change border color when checked */
-}
-
-.custom-checkbox input[type="checkbox"]:checked::after {
-  content: '✓'; 
-  position: relative;
-  bottom: 4px;
-  color: white; 
-}
-.select-custom {
-  appearance: none; 
-  color: #999; 
-}
-
-.custom-arrow {
-  position: absolute;
-  top: 50%;
-  right: 25px; 
-  transform: translateY(-50%); 
-  pointer-events: none; 
-}
-
-
