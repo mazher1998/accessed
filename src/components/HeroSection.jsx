@@ -9,6 +9,7 @@ function HeroSection() {
 
   return (
     <div>
+         <EnrolmentPopUp showModal={showModal} setShowModal={setShowModal} />
           <div className="px-100 py-100">
         <div className="text-center">
           <h1 className="mb-20 font-500 text-50 font-lora">
@@ -57,8 +58,6 @@ function HeroSection() {
           </div>
         </div>
       </div>
-      <EnrolmentPopUp showModal={showModal} setShowModal={setShowModal} />
-
     </div>
   )
 }

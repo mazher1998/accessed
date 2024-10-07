@@ -62,9 +62,11 @@
   
    .tests-div{
     display: block;
+    /* flex-wrap: wrap; */
     margin-top: 10px;
     margin-left: -16px;
     width: 100%;
+    
     animation: expand 0.7s forwards;
       border-left: 0.4px solid #D2D5E2;
     border-top: none;

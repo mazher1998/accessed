@@ -14,6 +14,10 @@
   padding-right: 100px;
 }
 
+.px-300{
+  padding-left: 300px;
+  padding-right: 300px;
+}
 
 /* Padding Y-axis */
 
@@ -347,7 +351,9 @@
 .display-block{
   display: block;
 }
-
+.display-flex{
+  display: flex;
+}
 /* Width */
 
 .full-width{
@@ -445,13 +451,12 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
 }
 
 .modal-content-popup{
+  transform: translate(-50%, -50%);
   position: fixed;
-  top: 25%;
-  left: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  left: 50%;
   z-index: 11;
+
 }
 
 /* Custom checkbox */
@@ -494,3 +499,9 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
 }
 
 
+@media (max-width: 1600px) {
+  .px-300{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
