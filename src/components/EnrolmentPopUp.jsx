@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
+import './../styles/EnrolmentPopUp.css'
 
 const EnrolmentPopUp = ({ showModal, setShowModal }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -90,7 +91,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   placeholder="Full Name*"
-                  className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
+                  className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
               <div className="col-6 mb-10">
@@ -101,7 +102,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   value={formData.city}
                   onChange={handleInputChange}
                   placeholder="City*"
-                  className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
+                  className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
               <div className="col-6 mb-10 pr-0-imp">
@@ -112,7 +113,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="Phone number*"
-                  className="grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
+                  className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
               <div className="col-6">
@@ -122,7 +123,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Email Address (optional)"
-                  className="full-width grey-placeholder pxy-25-15 border-radius-6 border-D7D7D7"
+                  className="input-height-54 full-width grey-placeholder pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
               <div className="col-12 mb-10 relative">
@@ -130,7 +131,9 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   name="university"
                   value={formData.university}
                   onChange={handleInputChange}
-                  className="full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom"
+                  className={`input-height-54 full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom ${
+                    formData.university ? "selected" : ""
+                  }`}
                   required
                 >
                   <option value="" disabled>University*</option>
@@ -152,7 +155,9 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   name="test"
                   value={formData.test}
                   onChange={handleInputChange}
-                  className="full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom"
+                  className={`input-height-54 full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom ${
+                    formData.test ? "selected" : ""
+                  }`}
                   required
                 >
                   <option value="" disabled>Test*</option>
@@ -188,7 +193,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
               </div>
             </div>
 
-            <div className="mt-28">
+            <div className="mt-28 pb-24">
               <button
                 type="submit"
                 className="bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8"

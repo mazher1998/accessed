@@ -1,7 +1,9 @@
 
 
 import HeroSection from "@/components/HeroSection";
+import JoinUsBtn from "@/components/JoinUsBtn";
 import Universities from "@/components/Universities";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -171,11 +173,7 @@ export default function Home() {
         </div>
 
         {/*JOin us button  */}
-        <div className="pb-100 d-flex justify-content-center">
-          <button className="pxy-18-110 text-16 border-none border-radius-10 bg-000000 text-FFFFFF btn-hover">
-            Join us
-          </button>
-        </div>
+       <JoinUsBtn/>
       </div>
 
     
