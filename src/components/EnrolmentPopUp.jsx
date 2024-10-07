@@ -28,9 +28,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
-    
-
+  
     try {
       const response = await fetch('/api/enroll', {
         method: 'POST',
@@ -59,7 +57,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
         throw new Error(data.error || 'Failed to submit form');
       }
     } catch (err) {
-      console.log( "asas1212saawswswddd",err.message);
+      console.log(err.message);
     } finally {
       setIsLoading(false);
     }
@@ -82,18 +80,6 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
               <p className="text-24 text-3980F3 mb-0">Enrolment</p>
               <span className="text-14">Enter details to get enrolled</span>
             </div>
-
-            {error && (
-              <div className="error-message mb-20 text-red-500 text-center">
-                {error}
-              </div>
-            )}
-
-            {success && (
-              <div className="success-message mb-20 text-green-500 text-center">
-                Enrollment successful!
-              </div>
-            )}
 
             <div className="row mb-60">
               <div className="col-6 pr-0-imp">
