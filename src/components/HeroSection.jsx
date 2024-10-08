@@ -1,16 +1,27 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import EnrolmentPopUp from './EnrolmentPopUp';
-
+import EnrolmentPopUp from "./EnrolmentPopUp";
+import PopUp from "./ToastPop";
 
 function HeroSection() {
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "",
+    message: "",
+    timeout: 0,
+  });
 
   return (
     <div>
-         <EnrolmentPopUp showModal={showModal} setShowModal={setShowModal} />
-          <div className="px-100 py-100">
+         <PopUp props={popup} />
+      <EnrolmentPopUp
+        showModal={showModal}
+        setShowModal={setShowModal}
+        setPopup={setPopup}
+      />
+      <div className="px-100 py-100">
         <div className="text-center">
           <h1 className="mb-20 font-500 text-50 font-lora">
             Best{" "}
@@ -34,7 +45,10 @@ function HeroSection() {
           </p>
 
           <div className="d-flex justify-content-center pointer">
-            <div className="pxy-18-57 border-none border-radius-10 bg-000000 text-FFFFFF relative btn-hover" onClick={()=>setShowModal(!showModal)} >
+            <div
+              className="pxy-18-57 border-none border-radius-10 bg-000000 text-FFFFFF relative btn-hover"
+              onClick={() => setShowModal(!showModal)}
+            >
               <Image
                 src="/BtnLeftImage.svg"
                 width={38}
@@ -58,8 +72,9 @@ function HeroSection() {
           </div>
         </div>
       </div>
+     
     </div>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;

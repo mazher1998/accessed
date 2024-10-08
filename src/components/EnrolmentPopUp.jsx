@@ -1,64 +1,85 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useState } from "react";
-import './../styles/EnrolmentPopUp.css'
+import "./../styles/EnrolmentPopUp.css";
 
-const EnrolmentPopUp = ({ showModal, setShowModal }) => {
+const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
-    city: '',
-    phone: '',
-    email: '',
-    university: '',
-    test: ''
+    fullName: "",
+    city: "",
+    phone: "",
+    email: "",
+    university: "",
+    test: "",
   });
-  const [error, setError] = useState('');
 
   if (!showModal) return null;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
+
+  const handleShowModal = () => {
+    setShowModal(!showModal);
+    setFormData({
+      fullName: "",
+      city: "",
+      phone: "",
+      email: "",
+      university: "",
+      test: "",
+    });
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-  
+
     try {
-      const response = await fetch('/api/enroll', {
-        method: 'POST',
+      const response = await fetch("/api/enroll", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        
-        setFormData({
-          fullName: '',
-          city: '',
-          phone: '',
-          email: '',
-          university: '',
-          test: ''
+        setPopup({
+          show: true,
+          type: "success",
+          message: data.message,
+          timeout: 3000,
         });
-       
-          setShowModal(false);
-      
+
+        setFormData({
+          fullName: "",
+          city: "",
+          phone: "",
+          email: "",
+          university: "",
+          test: "",
+        });
+
+        setShowModal(false);
       } else {
-        throw new Error(data.error || 'Failed to submit form');
+        throw new Error(data.message || "Failed to submit form");
       }
     } catch (err) {
-      console.log(err.message);
+      setPopup({
+        show: true,
+        type: "error",
+        message: err.message,
+        timeout: 3000,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -67,15 +88,23 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
   return (
     <>
       <div className="modal-content-popup">
-        <div className="bg-FFFFFF relative border-radius-20" style={{ width: "658px" }}>
+        <div
+          className="bg-FFFFFF relative border-radius-20"
+          style={{ width: "658px" }}
+        >
           <span
             className="absolute pointer"
             style={{ right: "0", padding: "20px" }}
-            onClick={() => setShowModal(!showModal)}
+            onClick={() => handleShowModal()}
           >
-            <Image src="/Icons/cross.svg" width={27} height={27} alt="Cross Close Icon" />
+            <Image
+              src="/Icons/cross.svg"
+              width={27}
+              height={27}
+              alt="Cross Close Icon"
+            />
           </span>
-          
+
           <form onSubmit={handleSubmit} className="modal-padding">
             <div className="text-center mb-40">
               <p className="text-24 text-3980F3 mb-0">Enrolment</p>
@@ -136,7 +165,9 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   }`}
                   required
                 >
-                  <option value="" disabled>University*</option>
+                  <option value="" disabled>
+                    University*
+                  </option>
                   <option value="university1">University 1</option>
                   <option value="university2">University 2</option>
                   <option value="university3">University 3</option>
@@ -160,7 +191,9 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                   }`}
                   required
                 >
-                  <option value="" disabled>Test*</option>
+                  <option value="" disabled>
+                    Test*
+                  </option>
                   <option value="test1">Test 1</option>
                   <option value="test2">Test 2</option>
                   <option value="test3">Test 3</option>
@@ -199,14 +232,17 @@ const EnrolmentPopUp = ({ showModal, setShowModal }) => {
                 className="bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8"
                 disabled={!isChecked || isLoading}
               >
-                {isLoading ? 'Processing...' : 'Done'}
+                {isLoading ? "Processing..." : "Done"}
               </button>
             </div>
           </form>
         </div>
       </div>
 
-      <div className="modal-overlay" onClick={() => setShowModal(!showModal)}></div>
+      <div
+        className="modal-overlay"
+        onClick={() => handleShowModal()}
+      ></div>
     </>
   );
 };
