@@ -24,24 +24,24 @@ function HeroSection() {
       <div className="px-100 py-100">
         <div className="text-center">
           <h1 className="mb-20 font-500 text-50 font-lora">
-            Best{" "}
-            <span className="text-3980F3 relative">
-              Online
+            
+            <span className=" relative">
+              Ace 
               <Image
                 src="/OnlineTextBelowImage.svg"
                 alt="Decorative element"
                 width={205}
                 height={25}
                 className="absolute"
-                style={{ left: "-34px", bottom: "-4px" }}
+                style={{ left: "-18px", bottom: "-4px" }}
               />
             </span>{" "}
-            Platform to Learn
+            Your Entry Tests for<span className="text-3980F3">Top</span>
             <br />
-            Everything<span className="text-3980F3">.</span>
+            <span className="text-3980F3"> Universities in Pakistan</span>!
           </h1>
           <p className="text-7B7B7B mb-80">
-            Evaluate Your Professors and Enhance the Academic Experience
+          Prepare for aptitude exams and secure admissions in Computer Science and<br /> Business programs at leading institutions.
           </p>
 
           <div className="d-flex justify-content-center pointer">

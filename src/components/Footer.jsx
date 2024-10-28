@@ -1,12 +1,31 @@
+'use client'
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
+import PopUp from './ToastPop';
 
 
 function Footer() {
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "",
+    message: "",
+    timeout: 0,
+  });
     const currentyear = new Date().getFullYear();
-
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      if(e.target.email.value){
+        setPopup({
+          show: true,
+          type: "success",
+          message: "Successfully Subscribed",
+          timeout: 3000,
+        });
+      }
+    }
   return (
     <div>
+      <PopUp props={popup} />
         <div className="bg-04448E">
           <div className="footer-spacing">
             <div className="row d-flex">
@@ -20,7 +39,7 @@ function Footer() {
                 <div className="vertical-separater"></div>
               </div>
 
-              <div className="col-4 pl-80-imp d-flex justify-content-between">
+              {/* <div className="col-4 pl-80-imp d-flex justify-content-between">
                 <div>
                   <p className="text-F7F7F7 font-500 text-24 ">Follow us</p>
 
@@ -83,7 +102,7 @@ function Footer() {
                 <div className="">
                   <div className="vertical-separater"></div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="col-5">
                 <div className="pl-80-imp">
@@ -95,6 +114,7 @@ function Footer() {
                     resources.
                   </p>
 
+                  <form onSubmit={handleSubmit}>
                   
                     <input
                       type="email"
@@ -103,11 +123,10 @@ function Footer() {
                       placeholder="Your email"
                       className="custom-email-input"
                     />
-                
-
-                  <button className="bg-3980F3 pxy-32-12 text-FFFFFF border-none border-radius-8">
+                  <button type='submit' className="border-FFFFFF pxy-32-12 text-FFFFFF bg-04448E border-none border-radius-8">
                     Subscribe
                   </button>
+                  </form>
                 </div>
               </div>
             </div>
