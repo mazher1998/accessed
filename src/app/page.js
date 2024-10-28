@@ -33,8 +33,8 @@ export default function Home() {
           </div>
           <div className="text-center mb-123">
             <p className="text-34">
-              A supportive and scaffolded <br />
-              <span className="text-3980F3"> assessment experience </span>.
+              A <span className="text-3980F3"> Supportive</span> & <span className="text-3980F3">Scaffolded</span> <br />
+               assessment experience.
             </p>
             <p className="text-7B7B7B text-16">
               Evaluate Your Professors and Enhance the Academic Experience
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <Image
-              src="/BtnLeftImage.svg"
+              src="/BtnLeftImageBlue.svg"
               width={90}
               height={90}
               alt="Decorative element"
@@ -51,18 +51,24 @@ export default function Home() {
             />
 
             <Image
-              src="/BtnRightImage.svg"
+              src="/BtnRightImageBlue.svg"
               width={90}
               height={90}
               alt="Decorative element"
               className="absolute"
               style={{ top: "-65px", right: "-60px" }}
             />
-            <div className="about-image-width border-radius-10 opacity-75 ">
+            {/* <div className="about-image-width border-radius-10 opacity-75 ">
               <video className="full-width"  autoPlay muted playsInline loop>
                 <source src="/DemoVideo.mp4" type="video/mp4" />
               </video>
+            </div> */}
+            <div className=" ">
+              <video className=""  autoPlay muted playsInline loop style={{width:"600px"}}>
+                <source src="./Videos/DemoVideo.mp4" type="video/mp4" />
+              </video>
             </div>
+
           </div>
         </div>
       </div>
@@ -71,32 +77,29 @@ export default function Home() {
         {/* Fast Ready */}
         <div>
           <div className=" py-100">
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-6 pxy-100">
-                <p className="text-16 font-600 text-3980F3">FAST READY</p>
+                <p className="text-16 font-400 text-3980F3 opacity-08">FAST READY</p>
                 <h2 className="text-34 font-poppins">
-                  Master your admission test with{" "}
-                  <span className="text-3980F3">speed</span> and{" "}
-                  <span className="text-3980F3">confidence</span>.
+                <span className="text-3980F3"> Conquer </span> your admission test with Precision and Confidence.
                 </h2>
                 <p className="text-7B7B7B text-16 font-400 ">
-                  Lorem ipsum dolor sit amet consectetur. Duis odio id mauris
-                  amet tempus at id. Sed ut amet viverra rhoncus sollicitudin
-                  mauris. Amet egestas viverra sem iaculis. Accumsan eleifend
-                  rhoncus semper tellus facilisi augue commodo turpis urna. Nunc
-                  facilisis quam facilisi consequat lorem. Parturient a lacus
-                  amet ullamcorper sed. Suspendisse fermentum semper congue
-                  ornare. Dolor urna venenatis mattis mattis aliquam fermentum
-                  vitae.
+                AccessEd provides a comprehensive approach to help you excel in your admission tests. With expertly designed courses and practice materials, we focus on building your speed and accuracy. Whether you&apos;re aiming for business or computer science programs, our platform ensures you&apos;re well-prepared for every aspect of the exam, so you can face test day with confidence.
                 </p>
+                <div className="line">
+                    <div className="dot"></div>
+                  </div>
               </div>
               <div className="col-6 pl-100-imp">
-                <Image
+              <video className=""  autoPlay muted playsInline loop style={{width:"600px"}}>
+                <source src="/Videos/FastReady.mp4" type="video/mp4" />
+              </video>
+                {/* <Image
                   src="/FastReadyImage.svg"
                   width={550}
                   height={500}
                   alt=""
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -105,75 +108,61 @@ export default function Home() {
         {/* Student Success */}
         <div className="bg-F5F9FD">
           <div className=" py-100">
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-6 pl-100-imp">
-                <Image
-                  src="/StudentSuccessImage.svg"
-                  width={550}
-                  height={500}
-                  alt=""
-                />
+              <video className=""  autoPlay muted playsInline loop style={{width:"600px"}}>
+                <source src="./Videos/OnlineAssessment.mp4" type="video/mp4" />
+              </video>
               </div>
               <div className="col-6 pxy-100">
-                <p className="text-16 font-600 text-3980F3">STUDENT SUCCESS</p>
+                <p className="text-16 font-400 text-3980F3 opacity-08">Online Assessment</p>
                 <h2 className="text-34 font-poppins">
-                  Empowering students for a future of{" "}
-                  <span className="text-3980F3">limitless success</span>.
+                <span className="text-3980F3"> Unlock</span> your Potential and Ace your admission tests.
                 </h2>
                 <p className="text-7B7B7B text-16 font-400 ">
-                  Lorem ipsum dolor sit amet consectetur. Duis odio id mauris
-                  amet tempus at id. Sed ut amet viverra rhoncus sollicitudin
-                  mauris. Amet egestas viverra sem iaculis. Accumsan eleifend
-                  rhoncus semper tellus facilisi augue commodo turpis urna. Nunc
-                  facilisis quam facilisi consequat lorem. Parturient a lacus
-                  amet ullamcorper sed. Suspendisse fermentum semper congue
-                  ornare. Dolor urna venenatis mattis mattis aliquam fermentum
-                  vitae.
+                At AccessEd, we believe in nurturing your skills to not only succeed in admission tests but to thrive in your academic and professional journey. Our platform offers a well-rounded learning experience, equipping you with the knowledge, strategies, and confidence needed to overcome challenges. By mastering key concepts and building a strong foundation, you&apos;re not just preparing for a test—you&apos;re unlocking a future filled with endless opportunities.
                 </p>
+                <div className="line">
+                    <div className="dot"></div>
+                  </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Online Assessment */}
+        {/* Student Success */}
 
         <div>
           <div className=" py-100">
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-6 pxy-100">
-                <p className="text-16 font-600 text-3980F3">
-                  ONLINE ASSESSMENT
+                <p className="text-16 font-400 text-3980F3 opacity-08">
+                Student Success
                 </p>
                 <h2 className="text-34 font-poppins">
-                  Master your admission test with{" "}
-                  <span className="text-3980F3">speed</span> and{" "}
-                  <span className="text-3980F3">confidence</span>.
+                <span className="text-3980F3">Achieve </span> Excellence and take the next step toward your dreams.
                 </h2>
                 <p className="text-7B7B7B text-16 font-400 ">
-                  Lorem ipsum dolor sit amet consectetur. Duis odio id mauris
-                  amet tempus at id. Sed ut amet viverra rhoncus sollicitudin
-                  mauris. Amet egestas viverra sem iaculis. Accumsan eleifend
-                  rhoncus semper tellus facilisi augue commodo turpis urna. Nunc
-                  facilisis quam facilisi consequat lorem. Parturient a lacus
-                  amet ullamcorper sed. Suspendisse fermentum semper congue
-                  ornare. Dolor urna venenatis mattis mattis aliquam fermentum
-                  vitae.
+                AccessEd is your trusted partner in navigating the challenges of admission tests. Our comprehensive learning resources are designed to sharpen your skills, boost your confidence, and help you achieve your academic goals. With targeted practice and expert guidance, you&apos;ll be ready to tackle the toughest questions and secure your spot in top business and computer science programs. Success is within your reach, and we&apos;re here to help you grasp it.
                 </p>
+
+                  <div className="line">
+                    <div className="dot"></div>
+                  </div>
+
+                <JoinUsBtn/>
               </div>
               <div className="col-6 pl-100-imp">
-                <Image
-                  src="/OnlineAssessmentImage.svg"
-                  width={550}
-                  height={500}
-                  alt=""
-                />
+              <video className="" style={{width:"600px"}}  autoPlay muted playsInline loop>
+                <source src="./Videos/StudentSuccess.mp4" type="video/mp4" />
+              </video>
               </div>
             </div>
           </div>
         </div>
 
         {/*JOin us button  */}
-       <JoinUsBtn/>
+       
       </div>
 
     

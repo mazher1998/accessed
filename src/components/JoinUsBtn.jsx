@@ -17,9 +17,9 @@ const JoinUsBtn = () => {
      <PopUp props={popup} />
       <EnrolmentPopUp showModal={showModal} setShowModal={setShowModal} setPopup={setPopup} />
       
-      <div className="pb-100 d-flex justify-content-center">
+      <div className=" mt-48">
         <button
-          className="pxy-18-110 text-16 border-none border-radius-10 bg-000000 text-FFFFFF btn-hover"
+          className="pxy-18-66 text-16 border-000000 border-radius-10 bg-FFFFFF text-000000 btn-hover"
           onClick={() => setShowModal(!showModal)}
         >
           Join us

@@ -32,10 +32,10 @@ const Universities = () => {
           <div className="text-center mb-60">
             <p className="text-34 font-sora">
               <br />
-              <span className="text-3980F3"> 50+</span> Universities
+              <span className="text-3980F3"> 12+ Universities and Tests</span> 
             </p>
             <p className="text-7B7B7B text-16">
-              Evaluate Your Professors and Enhance the Academic Experience
+            Prepare for All Major University Entry Tests.
             </p>
           </div>
           <div className="d-flex flex-wrap justify-content-center relative">
