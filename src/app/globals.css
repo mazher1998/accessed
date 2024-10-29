@@ -4,6 +4,41 @@
   
 }
 
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+strong,
+i,
+ol,
+ul,
+li,
+form,
+label,
+header,
+menu,
+nav,
+section {
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left:0;
+
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 
@@ -42,60 +77,38 @@
 
 /* Padding X-Y-Axis */
 .pxy-12-6{
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding:6px 12px
 }
 
 .pxy-16-10{
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 16px
 }
 
 .pxy-15-12{
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding:12px 15px
 }
 
 .pxy-25-15{
-  padding-top: 15px;
-  padding-right: 25px;
-  padding-bottom: 15px;
-  padding-left: 25px;
+  padding: 15px 25px
 }
 
 .pxy-18-57{
-  padding-left: 57px;
-  padding-right: 57px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 18px 57px
 }
 
 .pxy-18-66{
-  padding-left: 66px;
-  padding-right: 66px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding:18px 66px;
 }
 
 
 .pxy-18-110{
-  padding-left: 111px;
-  padding-right: 111px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding:18px 110px;
+
 }
 
 .pxy-32-12{
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding:12px 32px;
+
 }
 
 .pxy-100{
@@ -192,6 +205,9 @@
 }
 
 /* Margin right */
+.mr-0-imp{
+  margin-right:0 !important
+}
 
 .mr-6{
   margin-right: 6px;
@@ -302,6 +318,9 @@
   font-size: 50px;
 }
 /* Font text Color */
+.text-999{
+  color: #999;
+}
 
 .text-FFFFFF{
   color: #FFFFFF;
@@ -393,6 +412,10 @@
   width: 100%;
 }
 
+.width-600{
+  width: 600px;
+}
+
 /* coursor */
 
 .pointer{
@@ -408,6 +431,9 @@
 .box-shadow-accessEd{
   box-shadow: 0px 0px 1px 0px rgba(48, 66, 120, 0.06), 0px 2px 6px 0px rgba(48, 66, 120, 0.06), 0px 10px 20px 0px rgba(48, 64, 120, 0.06);;
 
+}
+.navbar-shadow{
+  box-shadow: 0px 4px 51.5px 0px rgba(54, 54, 54, 0.04);
 }
 
 
@@ -480,6 +506,24 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
 
 }
 
+.text-decorative-position{
+  left: -18px;
+  bottom: -4px;
+}
+
+.about-decorative-posit-left{
+  top:-65px;
+  left: -60px;
+}
+.about-decorative-posit-right{
+  top: -65px;
+  right: -60px;
+}
+
+
+.demovideo{
+  width: 100%;
+}
 
 /* Pop Up modal */
 
@@ -490,3 +534,96 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
     padding-right: 100px;
   }
 }
+
+@media (max-width: 576px) {
+  .line{
+    width: 100%;
+  }
+  .width-600{
+    width: 100%;
+  }
+  .pxy-100{
+    padding-left: 27px !important;
+    padding-right: 27px!important;
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+  .about-decorative-posit-left{
+    top:-60px;
+    left: 15px;
+  }
+  .about-decorative-posit-right{
+    top: -60px;
+    right: 15px;
+  }
+  .about-decorative-width{
+    width: 30px !important;
+    /* height: 100% !important; */
+  }
+  .demovideo{
+    width: 80%
+  }
+  .mobile-display-none{
+    display: none;
+  }
+
+
+  .mobile-pl-0-imp{
+    padding-left: 0 !important;
+    
+  }
+  .px-27{
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .py-50{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer-spacing{
+    padding: 50px 27px 50px 27px
+  }
+  .mobile-pxy-6-6{
+    padding: 6px;
+  }
+  .mobile-pxy-18-30{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .mobile-px-20{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-mb-50{
+    margin-bottom: 50px;
+  }
+  .mobile-mb-10{
+    margin-bottom:10px
+  }
+
+
+  .mobile-text-36{
+    font-size: 36px;
+  }
+  .mobile-text-24{
+    font-size: 24px;
+  }
+  .mobile-text-12{
+    font-size: 12px;
+  }
+
+  .mobile-W-150{
+    width: 150px;
+  }
+ 
+}
+
+
+
+
+

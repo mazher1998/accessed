@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import "./../styles/EnrolmentPopUp.css";
+import { universitiesName } from "@/helper/constants";
+
 
 const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -15,6 +17,8 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
     test: "",
   });
 
+  const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
+
   if (!showModal) return null;
 
   const handleInputChange = (e) => {
@@ -26,16 +30,23 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   };
 
   const handleShowModal = () => {
-    setShowModal(!showModal);
+    setShowModal(!showModal); 
     setFormData({
       fullName: "",
       city: "",
       phone: "",
       email: "",
       university: "",
-      test: "",
     });
-  }
+    setShowUniversityDropdown(!showUniversityDropdown);
+  };
+
+  const handleDropdownSelect = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+    field === "university"  && setShowUniversityDropdown(false)  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,14 +99,11 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   return (
     <>
       <div className="modal-content-popup">
-        <div
-          className="bg-FFFFFF relative border-radius-20"
-          style={{ width: "658px" }}
-        >
+        <div className="bg-FFFFFF relative border-radius-20 w-658">
           <span
             className="absolute pointer"
             style={{ right: "0", padding: "20px" }}
-            onClick={() => handleShowModal()}
+            onClick={handleShowModal}
           >
             <Image
               src="/Icons/cross.svg"
@@ -112,7 +120,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
             </div>
 
             <div className="row mb-60">
-              <div className="col-6 pr-0-imp">
+              <div className="col-12 col-sm-6 mobile-mb-10 ">
                 <input
                   required
                   type="text"
@@ -123,7 +131,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
-              <div className="col-6 mb-10">
+              <div className="col-12 col-sm-6 mb-10 ">
                 <input
                   required
                   type="text"
@@ -134,7 +142,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
-              <div className="col-6 mb-10 pr-0-imp">
+              <div className="col-12 col-sm-6 mb-10">
                 <input
                   required
                   type="text"
@@ -145,7 +153,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   className="input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
-              <div className="col-6">
+              <div className="col-12 col-sm-6 mobile-mb-10 ">
                 <input
                   type="email"
                   name="email"
@@ -155,75 +163,57 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   className="input-height-54 full-width grey-placeholder pxy-25-15 border-radius-6 border-D7D7D7"
                 />
               </div>
-              <div className="col-12 mb-10 relative">
-                <select
-                  name="university"
-                  value={formData.university}
-                  onChange={handleInputChange}
-                  className={`input-height-54 full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom ${
-                    formData.university ? "selected" : ""
-                  }`}
-                  required
+
+              {/* Custom University Dropdown */}
+              <div className="col-12 mb-10 ">
+                <div
+                  className={`input-height-54 full-width pxy-25-15 border-radius-6 border-D7D7D7 dropdown-field relative ${formData.university ? "" : "text-999"}`}
+                  onClick={() =>
+                    setShowUniversityDropdown(!showUniversityDropdown)
+                  }
                 >
-                  <option value="" disabled>
-                    University*
-                  </option>
-                  <option value="university1">University 1</option>
-                  <option value="university2">University 2</option>
-                  <option value="university3">University 3</option>
-                  <option value="university4">University 4</option>
-                </select>
-                <Image
-                  src="/Icons/SelectCustomArrow.svg"
-                  width={14}
-                  height={14}
-                  alt="Custom arrow"
-                  className="custom-arrow"
-                />
+                  {formData.university || "University*"}
+                  <Image
+                    src="/Icons/SelectCustomArrow.svg"
+                    width={14}
+                    height={14}
+                    alt="Custom arrow"
+                    className="custom-arrow"
+                  />
+               
+                {showUniversityDropdown && (
+                  <div className="dropdown-options">
+                    {universitiesName.map((university) => (
+                      <div
+                        key={university}
+                        className="dropdown-option"
+                        onClick={() => handleDropdownSelect("university", university)}
+                      >
+                        {university}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                 </div>
               </div>
-              <div className="col-12 relative">
-                <select
-                  name="test"
-                  value={formData.test}
-                  onChange={handleInputChange}
-                  className={`input-height-54 full-width pxy-25-15 border-radius-6 border-D7D7D7 select-custom ${
-                    formData.test ? "selected" : ""
-                  }`}
-                  required
-                >
-                  <option value="" disabled>
-                    Test*
-                  </option>
-                  <option value="test1">Test 1</option>
-                  <option value="test2">Test 2</option>
-                  <option value="test3">Test 3</option>
-                  <option value="test4">Test 4</option>
-                </select>
-                <Image
-                  src="/Icons/SelectCustomArrow.svg"
-                  width={14}
-                  height={14}
-                  alt="Custom arrow"
-                  className="custom-arrow"
-                />
-              </div>
+
+              {/* Custom Test Dropdown */}
+          
             </div>
 
-            <div>
-              <div className="mt-20">
-                <label className="custom-checkbox text-14 font-400">
-                  <input
-                    type="checkbox"
-                    className="mr-8"
-                    checked={isChecked}
-                    onChange={(e) => setIsChecked(e.target.checked)}
-                  />
-                  I agree to the&nbsp;
-                  <span className="text-0378A6">Terms of Services</span>
-                  &nbsp;and&nbsp;
-                  <span className="text-0378A6">Privacy Policy</span>.
-                </label>
-              </div>
+            <div className="mt-20">
+              <label className="custom-checkbox text-14 font-400">
+                <input
+                  type="checkbox"
+                  className="mr-8"
+                  checked={isChecked}
+                  onChange={(e) => setIsChecked(e.target.checked)}
+                />
+                I agree to the&nbsp;
+                <span className="text-0378A6">Terms of Services</span>
+                &nbsp;and&nbsp;
+                <span className="text-0378A6">Privacy Policy</span>.
+              </label>
             </div>
 
             <div className="mt-28 pb-24">
@@ -239,10 +229,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
         </div>
       </div>
 
-      <div
-        className="modal-overlay"
-        onClick={() => handleShowModal()}
-      ></div>
+      <div className="modal-overlay" onClick={handleShowModal}></div>
     </>
   );
 };

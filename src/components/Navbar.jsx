@@ -8,10 +8,12 @@ import CountdownTimer from './CountDownTimer'
 const Navbar = () => {
   return (
     <nav className="">
-        <div className="px-100 py-12">
+        <div className="px-100 py-12 px-27 ">
             <div className='d-flex justify-content-between'>
           <Link className="navbar-brand" href="#">
-            <Image src='/logo/accessedlogo.svg' width={168} height={42} alt='Accessed Logo'/>
+            <Image src='/logo/accessedlogo.svg' width={168} height={42} alt='Accessed Logo' className='d-none d-sm-block'/>
+            <Image src='/logo/mobilelogo.svg' width={61} height={42} alt='Accessed Logo' className='d-block d-sm-none'/>
+
           </Link>
           <div className="">
             <CountdownTimer targetDate={'2024-11-16T23:59:59'} />

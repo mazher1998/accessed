@@ -36,14 +36,14 @@ const CountdownTimer = ({ targetDate }) => {
   return (
     <>
     <div className="d-flex">
-      <div className="pxy-15-12 bg-FFFFFF border-radius-6 timer-shadow mr-6">
-        <span className="text-3980F3">{timeLeft.days} days </span>
+      <div className="pxy-15-12 mobile-pxy-6-6 bg-FFFFFF border-radius-6 timer-shadow mr-6">
+        <span className="mobile-text-12 text-3980F3">{timeLeft.days} days </span>
       </div>
-      <div className="pxy-15-12 bg-FFFFFF border-radius-6 timer-shadow mr-6">
-        <span className="text-3980F3"> {timeLeft.hours} hours </span>
+      <div className="pxy-15-12 mobile-pxy-6-6 bg-FFFFFF border-radius-6 timer-shadow mr-6">
+        <span className="mobile-text-12 text-3980F3"> {timeLeft.hours} hours </span>
       </div>
-      <div className="pxy-15-12 bg-FFFFFF border-radius-6 timer-shadow">
-        <span className="text-3980F3">{timeLeft.minutes} minutes </span>
+      <div className="pxy-15-12 mobile-pxy-6-6 bg-FFFFFF border-radius-6 timer-shadow">
+        <span className="mobile-text-12 text-3980F3">{timeLeft.minutes} minutes </span>
       </div>
     </div>
     </>
