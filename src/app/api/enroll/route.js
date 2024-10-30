@@ -39,7 +39,7 @@ export async function POST(req) {
           phone_number: phone,
           custom_fields: {
             university: university,
-            test: test
+            // test: test
           }
         }
       ]

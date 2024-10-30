@@ -29,14 +29,14 @@ function Footer() {
         <div className="bg-04448E">
           <div className="footer-spacing">
             <div className="row d-flex">
-              <div className="col-3 d-flex justify-content-between">
+              <div className="col-12 col-sm-5 d-flex justify-content-between mobile-mb-50">
                 <Image
                   src="/logo/FooterLogo.svg"
-                  width={246}
-                  height={141}
+                  width={350}
+                  height={200}
                   alt=""
                 />
-                <div className="vertical-separater"></div>
+                <div className= "mobile-display-none vertical-separater"></div>
               </div>
 
               {/* <div className="col-4 pl-80-imp d-flex justify-content-between">
@@ -104,8 +104,8 @@ function Footer() {
                 </div>
               </div> */}
 
-              <div className="col-5">
-                <div className="pl-80-imp">
+              <div className="col-12 col-sm-7">
+                <div className="pl-80-imp mobile-pl-0-imp">
                   <h3 className="text-24 text-F7F7F7 font-500 mb-10">
                     Stay in loop
                   </h3>
@@ -132,7 +132,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="px-100 py-20">
+        <div className="px-100 py-20 px-27">
           <div className="separator d-none d-sm-block"></div>
           <div className="d-flex justify-content-between ">
             <div>
