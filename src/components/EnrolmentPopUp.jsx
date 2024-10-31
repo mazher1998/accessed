@@ -27,7 +27,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
     phone: "",
     email: "",
     // university: "",
-    test: "",
+    // test: "",
   });
 
   // const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
@@ -45,7 +45,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
 
   const handleShowModal = () => {
     setShowModal(!showModal); 
-    setIsChecked(false);
+    // setIsChecked(false);
     setMissingFields([]);
     setFormData({
       fullName: "",
@@ -102,8 +102,8 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
           city: "",
           phone: "",
           email: "",
-          university: "",
-          test: "",
+          // university: "",
+          // test: "",
         });
         setShowModal(false);
       } else {
@@ -250,7 +250,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                 className={`bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8 `}
                 disabled={isLoading}
               >
-                {isLoading ? "Processing..." : "Done"}
+                {isLoading ? "..." : "Done"}
               </button>
             </div>
           </form>

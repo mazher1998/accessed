@@ -6,7 +6,7 @@ sgClient.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { fullName, email, city, phone, university, test  } = body;
+    const { fullName, email, city, phone  } = body;
     // Prepare the contact data
 
     // Case 1 If the email is already in the contact data
