@@ -68,9 +68,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="">
         {/* Fast Ready */}
-        <div>
+        <div className="centered-container">
           <div className=" py-100 py-50">
             <div className="row align-items-center mr-0-imp">
               <div className="col-12 col-sm-6 pxy-100 ">
@@ -82,7 +82,7 @@ export default function Home() {
                 AccessEd provides a comprehensive approach to help you excel in your admission tests. With expertly designed courses and practice materials, we focus on building your speed and accuracy. Whether you&apos;re aiming for business or computer science programs, our platform ensures you&apos;re well-prepared for every aspect of the exam, so you can face test day with confidence.
                 </p>
                 <div className="line">
-                    <div className="dot"></div>
+                    {/* <div className="dot"></div> */}
                   </div>
               </div>
               <div className="col-12 col-sm-6 pl-100-imp mobile-pl-0-imp pr-0-imp">
@@ -97,6 +97,7 @@ export default function Home() {
 
         {/* Student Success */}
         <div className="bg-F5F9FD">
+          <div className="centered-container">
           <div className=" py-100 py-50">
             <div className="row align-items-center mr-0-imp">
               <div className="col-12 col-sm-6 pl-100-imp mobile-pl-0-imp">
@@ -113,16 +114,17 @@ export default function Home() {
                 At AccessEd, we believe in nurturing your skills to not only succeed in admission tests but to thrive in your academic and professional journey. Our platform offers a well-rounded learning experience, equipping you with the knowledge, strategies, and confidence needed to overcome challenges. By mastering key concepts and building a strong foundation, you&apos;re not just preparing for a test—you&apos;re unlocking a future filled with endless opportunities.
                 </p>
                 <div className="line">
-                    <div className="dot"></div>
+                    {/* <div className="dot"></div> */}
                   </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
 
         {/* Student Success */}
 
-        <div>
+        <div className="centered-container">
           <div className=" py-100 py-50">
             <div className="row align-items-center mr-0-imp">
               <div className="col-12 col-sm-6 pxy-100">
@@ -137,7 +139,7 @@ export default function Home() {
                 </p>
 
                   <div className="line">
-                    <div className="dot"></div>
+                    {/* <div className="dot"></div> */}
                   </div>
 
                 <JoinUsBtn/>

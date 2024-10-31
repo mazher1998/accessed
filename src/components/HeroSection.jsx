@@ -15,7 +15,7 @@ function HeroSection() {
 
   return (
     <div>
-         <PopUp props={popup} />
+      <PopUp props={popup} />
       <EnrolmentPopUp
         showModal={showModal}
         setShowModal={setShowModal}
@@ -24,9 +24,10 @@ function HeroSection() {
       <div className="px-100 py-100 px-27 py-50">
         <div className="text-center">
           <h1 className="mb-20 font-500 text-50 mobile-text-36 font-lora">
-            
-            <span className=" relative">
-              Ace 
+            Ace Your
+            <span className=" text-3980F3 relative">
+              {" "}
+              Entry Tests{" "}
               <Image
                 src="/OnlineTextBelowImage.svg"
                 alt="Decorative element"
@@ -36,12 +37,16 @@ function HeroSection() {
                 // style={{ left: "-18px", bottom: "-4px" }}
               />
             </span>{" "}
-            Your Entry Tests for<span className="text-3980F3 "> Top</span>
-            <br className="mobile-display-none"/>
-            <span className="text-3980F3"> Universities in Pakistan</span>!
+            for<span className="text-3980F3 "> Top</span>
+            <br className="mobile-display-none" />
+            <span className="text-3980F3"> Universities </span> in Pakistan -{" "}
+            <span className="text-3980F3">For Free</span>!
           </h1>
           <p className="text-7B7B7B mb-80 mobile-text-12">
-          Prepare for aptitude exams and secure admissions in Computer Science and<br className="mobile-display-none" /> Business programs at leading institutions.
+            Prepare for aptitude exams and secure admissions in Computer Science
+            and
+            <br className="mobile-display-none" /> Business programs at leading
+            institutions.
           </p>
 
           <div className="d-flex justify-content-center pointer">
@@ -72,7 +77,6 @@ function HeroSection() {
           </div>
         </div>
       </div>
-     
     </div>
   );
 }

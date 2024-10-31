@@ -44,8 +44,8 @@
   
   }
   .custom-checkbox input[type="checkbox"]:checked {
-    background-color: #0378A6; /* Background color when checked */
-    border-color: #0378A6;     /* Change border color when checked */
+    background-color: #4AA0F3; /* Background color when checked */
+    border-color: #4AA0F3;     /* Change border color when checked */
   }
   
   .custom-checkbox input[type="checkbox"]:checked::after {
