@@ -6,7 +6,6 @@ import './../styles/ToastPopup.css'
 export default function PopUp({ props}) {
   const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
-    console.log(props);
     setShowPopup(props.show)
     setTimeout(()=>{
       setShowPopup(false)
