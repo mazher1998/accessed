@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import sgClient from '@sendgrid/client';
 
-sgClient.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+sgClient.setApiKey("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");
 
 export async function POST(req) {
   try {
@@ -29,7 +29,7 @@ export async function POST(req) {
     // }
 
     const data = {
-      list_ids: [process.env.REACT_APP_CONTACT_LIST_ID],
+      list_ids: ["6b8b8054-ae4d-4a97-9c60-26902cb28ee7"],
       contacts: [
         {
           email: email,
