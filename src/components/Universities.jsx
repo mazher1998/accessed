@@ -70,7 +70,7 @@ const Universities = () => {
                         <div className="row d-flex flex-wrap">
                           {uni.tests.map((test, testIndex) => (
                             <div className="col-6" key={`${uni.name}-test-${testIndex}`}>
-                              <ul className="text-14 text-3980F3 pointer">
+                              <ul className="text-14 text-3980F3 ">
                                 <li>{test}</li>
                               </ul>
                             </div>

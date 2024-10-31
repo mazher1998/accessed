@@ -146,7 +146,7 @@ export default function Home() {
               </div>
               <div className="col-12 col-sm-6 pl-100-imp mobile-pl-0-imp pr-0-imp">
               <video className="width-600"   autoPlay muted playsInline loop>
-                <source src="./Videos/StudentSuccess.mp4" type="video/mp4" />
+                <source src="./Videos/StudentSccuess.mp4" type="video/mp4" />
               </video>
               </div>
             </div>
