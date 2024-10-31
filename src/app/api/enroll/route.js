@@ -53,7 +53,7 @@ export async function POST(req) {
     };
 
     const [response] = await sgClient.request(request);
-    console.log('Contact added to SendGrid: ', response);
+    // console.log('Contact added to SendGrid: ', response);
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
       return NextResponse.json({ success: true, message: "You have been successfully enrolled" });
