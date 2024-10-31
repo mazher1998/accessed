@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import sgClient from '@sendgrid/client';
 
-sgClient.setApiKey(process.env.SENDGRID_API_KEY);
+sgClient.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { fullName, email, city, phone, university, test  } = body;
+    const { fullName, email, city, phone  } = body;
     // Prepare the contact data
 
     // Case 1 If the email is already in the contact data
@@ -29,7 +29,7 @@ export async function POST(req) {
     // }
 
     const data = {
-      list_ids: [process.env.CONTACT_LIST_ID],
+      list_ids: [process.env.REACT_APP_CONTACT_LIST_ID],
       contacts: [
         {
           email: email,
