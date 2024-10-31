@@ -512,7 +512,7 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
 
 .btn-hover:hover{
   background: linear-gradient(180deg, #4AA0F3 0%, #377CF3 100%);
-  border: none;
+  border: 1px solid #377CF3;
   color: white;
 }
 
