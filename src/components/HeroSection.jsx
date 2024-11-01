@@ -51,7 +51,7 @@ function HeroSection() {
 
           <div className="d-flex justify-content-center pointer">
             <div
-              className="pxy-18-57 mobile-pxy-18-30 border-none border-radius-10 bg-000000 text-FFFFFF relative btn-hover"
+              className="pxy-18-57 mobile-pxy-18-30 border-000000 border-radius-10 bg-000000 text-FFFFFF relative btn-hover"
               onClick={() => setShowModal(!showModal)}
             >
               <Image
