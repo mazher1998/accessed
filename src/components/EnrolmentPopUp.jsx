@@ -7,7 +7,6 @@ import "./../styles/EnrolmentPopUp.css";
 const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
 
   useEffect(() => {
-    // Disable scroll when modal is open
     if (showModal) {
       document.body.style.overflow = "hidden";
     } else {
@@ -20,6 +19,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
 
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
   const [missingFields, setMissingFields] = useState([]);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -36,16 +36,48 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+  
+    if (name === "phone") {
+      setPhoneError(false)
+      let formattedValue = value.replace(/\D/g, "");
+  
+      if (value.endsWith("-")) {
+        formattedValue = formattedValue.slice(0, -1);
+      }
+      // Format as 03XX-XXXXXXX
+      if (formattedValue.startsWith("03") ) {
+        if (formattedValue.length >= 4 && formattedValue.length <= 7) {
+          formattedValue = `${formattedValue.slice(0, 4)}-${formattedValue.slice(4)}`;
+        } else if (formattedValue.length > 4) {
+          formattedValue = `${formattedValue.slice(0, 4)}-${formattedValue.slice(4, 11)}`;
+        }
+      }
+      
+      const isValidPhone = /^(03\d{2})-\d{7}$/.test(formattedValue);
+      setPhoneError(!isValidPhone);
+  
+      setFormData((prev) => ({
+        ...prev,
+        [name]: formattedValue,
+      }));
+  
+      return;
+    }
+  
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+  
     setMissingFields((prev) => prev.filter((field) => field !== name));
   };
+  
+  
 
   const handleShowModal = () => {
     setShowModal(!showModal); 
     // setIsChecked(false);
+    setPhoneError(false);
     setMissingFields([]);
     setFormData({
       fullName: "",
@@ -66,17 +98,18 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   //   setMissingFields((prev) => prev.filter((f) => f !== field));
   // };
 
+ 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const requiredFields = ["fullName","email", "city", "phone",];
+    const requiredFields = ["fullName", "city", "phone",];
     const emptyFields = requiredFields.filter((field) => !formData[field]);
     
-    if (emptyFields.length > 0) {
+    if (emptyFields.length > 0 || phoneError) {
       setMissingFields(emptyFields);
       return;
     }
-    
     setIsLoading(true);
 
     try {
@@ -180,7 +213,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   onChange={handleInputChange}
                   placeholder="Phone number*"
                   className={`input-height-54 grey-placeholder full-width pxy-25-15 border-radius-6 ${
-                    missingFields.includes("phone") ? "border-red" : "border-D7D7D7"
+                    phoneError || missingFields.includes("phone") ? "border-red" : "border-D7D7D7"
                   }`}
                 />
               </div>
@@ -191,8 +224,8 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Email Address (optional)"
-                  className={`input-height-54 full-width grey-placeholder pxy-25-15 border-radius-6 ${ missingFields.includes("email") ? "border-red" : "border-D7D7D7"}`}
+                  placeholder="Email Address (optional"
+                  className={`input-height-54 full-width grey-placeholder pxy-25-15 border-radius-6 border-D7D7D7`}
                 />
               </div>
 
