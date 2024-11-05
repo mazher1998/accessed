@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   const client = new Client({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
+    user: process.env.NEXT_PUBLIC_DB_USER,
+    host: process.env.NEXT_PUBLIC_DB_HOST,
+    database: process.env.NEXT_PUBLIC_DB_NAME,
+    password: process.env.NEXT_PUBLIC_DB_PASSWORD,
     port: 5432,
     ssl: {
       require: true,

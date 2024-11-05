@@ -74,8 +74,6 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
     setMissingFields((prev) => prev.filter((field) => field !== name));
   };
   
-  
-
   const handleShowModal = () => {
     setShowModal(!showModal); 
     // setIsChecked(false);
@@ -287,7 +285,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
             <div className="mt-28 pb-24">
               <button
                 type="submit"
-                className={`bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8 ${missingFields.length>0 ? "not-allowed": "pointer"} `}
+                className={`bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8 ${missingFields.length>0  || phoneError? "not-allowed": "pointer"} `}
                 disabled={isLoading}
               >
                 {isLoading ? "..." : "Submit"}
