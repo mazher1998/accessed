@@ -1,22 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./../styles/EnrolmentPopUp.css";
 // import { universitiesName } from "@/helper/constants";
 
 const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
-
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showModal]);
-
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
@@ -30,6 +18,17 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
     // test: "",
   });
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showModal]);
+
   // const [showUniversityDropdown, setShowUniversityDropdown] = useState(false);
 
   if (!showModal) return null;
@@ -38,7 +37,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
     const { name, value } = e.target;
   
     if (name === "phone") {
-      setPhoneError(false)
+      setPhoneError(false);
       let formattedValue = value.replace(/\D/g, "");
   
       if (value.endsWith("-")) {
@@ -52,14 +51,17 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
           formattedValue = `${formattedValue.slice(0, 4)}-${formattedValue.slice(4, 11)}`;
         }
       }
-      
       const isValidPhone = /^(03\d{2})-\d{7}$/.test(formattedValue);
       setPhoneError(!isValidPhone);
   
       setFormData((prev) => ({
         ...prev,
         [name]: formattedValue,
-      }));
+       })); 
+
+      setMissingFields((prev) =>
+        isValidPhone ? prev.filter((field) => field !== name) : prev
+      );
   
       return;
     }
@@ -98,7 +100,6 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
   //   setMissingFields((prev) => prev.filter((f) => f !== field));
   // };
 
- 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -110,6 +111,9 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
       setMissingFields(emptyFields);
       return;
     }
+
+    setPhoneError(false)
+    setMissingFields([]); 
     setIsLoading(true);
 
     try {
@@ -146,13 +150,16 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
       setPopup({
         show: true,
         type: "error",
-        message: "Failed to submit, Try Later",
+        message: err.message,
         timeout: 3000,
       });
     } finally {
       setIsLoading(false);
     }
   };
+
+
+  
 
   return (
     <>
@@ -224,7 +231,7 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Email Address (optional"
+                  placeholder="Email Address (optional)"
                   className={`input-height-54 full-width grey-placeholder pxy-25-15 border-radius-6 border-D7D7D7`}
                 />
               </div>
@@ -280,10 +287,10 @@ const EnrolmentPopUp = ({ showModal, setShowModal, setPopup }) => {
             <div className="mt-28 pb-24">
               <button
                 type="submit"
-                className={`bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8 `}
+                className={`bg-gradient-modal full-width pxy-16-10 text-FFFFFF border-none border-radius-8 ${missingFields.length>0 ? "not-allowed": "pointer"} `}
                 disabled={isLoading}
               >
-                {isLoading ? "..." : "Done"}
+                {isLoading ? "..." : "Submit"}
               </button>
             </div>
           </form>
