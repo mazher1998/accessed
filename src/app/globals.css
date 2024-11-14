@@ -556,6 +556,14 @@ background: linear-gradient(191deg, #4AA0F3 8.04%, #377CF3 91.96%);
   padding: 0 calc((100vw - 1400px) / 2); 
 }
 
+.btn-auth-hover:hover{
+  padding: 8px 10px;
+  background-color: #3980F3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
 /* input:focus{
   outline: none;
 } */

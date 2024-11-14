@@ -48,10 +48,10 @@ const Navbar = () => {
             />
           </Link>
           <div className="d-flex align-items-center ">
-            <p className="d-none d-sm-block text-3980F3 text-12 font-400 mb-0 mr-20" >Launching our Study Portal in </p>
-            <CountdownTimer targetDate={"2024-11-16T23:59:59"} />
-            {/* <button className="me-3 bg-3980F3 pxy-16-10 text-FFFFFF border-none border-radius-8">Login</button>
-            <button className="bg-FFFFFF border-none text-3980F3">Sign Up</button> */}
+            {/* <p className="d-none d-sm-block text-3980F3 text-12 font-400 mb-0 mr-20" >Launching our Study Portal in </p>
+            <CountdownTimer targetDate={"2024-11-16T23:59:59"} /> */}
+            <Link style={{textDecoration:"none"}} className="mr-16  bg-FFFFFF border-none text-3980F3 text-16 btn-auth-hover" href="https://app.accessed.pk/signup" target="_blank" rel="noopener noreferrer">Login</Link>
+            <Link style={{textDecoration:"none"}} className="bg-FFFFFF border-none text-3980F3 text-16 btn-auth-hover" href="https://app.accessed.pk/login"   target="_blank" rel="noopener noreferrer">Sign Up</Link>
           </div>
         </div>
       </div>
