@@ -325,6 +325,9 @@ section {
   font-size: 50px;
 }
 /* Font text Color */
+.text-000000{
+  color: #000000;
+}
 .text-999{
   color: #999;
 }

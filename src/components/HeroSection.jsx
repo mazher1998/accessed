@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import EnrolmentPopUp from "./EnrolmentPopUp";
 import PopUp from "./ToastPop";
+import Link from "next/link";
+
 
 function HeroSection() {
   const [showModal, setShowModal] = useState(false);
@@ -50,9 +52,11 @@ function HeroSection() {
           </p>
 
           <div className="d-flex justify-content-center pointer">
-            <div
+            <Link
+              href="https://app.accessed.pk/login"   target="_blank" rel="noopener noreferrer"
               className="pxy-18-57 mobile-pxy-18-30 border-000000 border-radius-10 bg-000000 text-FFFFFF relative btn-hover"
-              onClick={() => setShowModal(!showModal)}
+              // onClick={() => setShowModal(!showModal)}
+              style={{textDecoration:"none"}}
             >
               <Image
                 src="/BtnLeftImage.svg"
@@ -63,7 +67,7 @@ function HeroSection() {
                 style={{ top: "-25px", left: "-35px" }}
               />
 
-              <span>Join our waiting list</span>
+              <span>Launch App</span>
 
               <Image
                 src="/BtnRightImage.svg"
@@ -73,7 +77,7 @@ function HeroSection() {
                 className="absolute"
                 style={{ top: "-25px", right: "-35px" }}
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
